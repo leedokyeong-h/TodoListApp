@@ -93,7 +93,6 @@ public class TodoUtil {
 		try {
 			Writer w = new FileWriter(filename);
 			for (TodoItem item : l.getList()) {
-				System.out.println(item.toSaveString());
 				w.write(item.toSaveString());
 			}
 			w.close();
