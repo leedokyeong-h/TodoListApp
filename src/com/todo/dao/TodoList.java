@@ -37,8 +37,15 @@ public class TodoList {
 
 	public void listAll() {
 		for (TodoItem myitem : list) {
-			System.out.println("제목: " + myitem.getTitle() + "  설명:  " + myitem.getDesc());
+			System.out.println((list.indexOf(myitem)+1)+". ["+myitem.getCategory()+ "] - " + myitem.getTitle() + " - " + myitem.getDesc() +" - "+myitem.getDue_date()+" - "+myitem.getCurrent_date());
 		}
+	}
+	public int size() {
+		int count = 0;
+		for (TodoItem myitem : list) {
+			count++;
+		}
+		return count;
 	}
 	
 	public void reverseList() {

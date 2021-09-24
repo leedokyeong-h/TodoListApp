@@ -19,8 +19,9 @@ public class TodoMain {
 		do {
 			Menu.prompt();
 			isList = false;
-			String choice = sc.next();
-			switch (choice) {
+			String str = sc.nextLine();
+			String[] choice = str.split(" ");
+			switch (choice[0]) {
 
 			case "add":
 				TodoUtil.createItem(l);
@@ -42,31 +43,50 @@ public class TodoMain {
 			case "ls_name_asc":
 				l.sortByName();
 				isList = true;
-				System.out.printf("제목 순으로 나열됩니다");
+				System.out.println("제목 순으로 나열됩니다");
 				break;
 
 			case "ls_name_desc":
 				l.sortByName();
 				l.reverseList();
-				System.out.printf("제목 역순으로 나열됩니다");
+				System.out.println("제목 역순으로 나열됩니다");
 				isList = true;
 				break;
 				
 			case "ls_date":
 				l.sortByDate();
-				System.out.printf("입력 순으로 나열됩니다");
+				System.out.println("입력 순으로 나열됩니다");
 				isList = true;
 				break;
 
 			case "exit":
 				quit = true;
-				System.out.printf("프로그램이 종료됩니다");
+				System.out.print("프로그램이 종료됩니다\n");
 				break;
 			
 			case "help":
 				Menu.displaymenu();
 				break;
-
+			
+			case "find":
+				TodoUtil.findList(l,choice[1]);
+				break;
+				
+			case "ls_date_desc":
+				l.sortByDate();
+				l.reverseList();
+				System.out.println("제목 역순으로 나열됩니다");
+				isList = true;
+				break;
+				
+			case "find_cate":
+				TodoUtil.findcateList(l,choice[1]);
+				break;
+				
+			case "ls_cate":
+				
+				break;
+				
 			default:
 				System.out.println("해당 명령어가 없습니다. 다시 입력해 주세요! [ 기능 보기 ( help ) ]");
 				break;
