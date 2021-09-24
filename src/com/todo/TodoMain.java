@@ -75,7 +75,7 @@ public class TodoMain {
 			case "ls_date_desc":
 				l.sortByDate();
 				l.reverseList();
-				System.out.println("제목 역순으로 나열됩니다");
+				System.out.println("입력 역순으로 나열됩니다");
 				isList = true;
 				break;
 				
@@ -84,7 +84,7 @@ public class TodoMain {
 				break;
 				
 			case "ls_cate":
-				
+				TodoUtil.listcate(l);
 				break;
 				
 			default:

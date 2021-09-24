@@ -42,7 +42,7 @@ public class TodoUtil {
 				+ "    항목 삭제\n\n"
 				+ "삭제하실 항목의 번호를 입력해 주세요 ");
 		int index = sc.nextInt();
-		if(l.size()+1<index) {
+		if(l.size()<index) {
 			System.out.print("입력하신 항목의 번호는 존재하지 않습니다.\n");
 			return;
 		}
@@ -76,7 +76,7 @@ public class TodoUtil {
 				+ "    항목 편집\n\n"
 				+ "편집하실 항목의 번호를 입력해 주세요 ");
 		int index = sc.nextInt();
-		if(l.size()+1<index) {
+		if(l.size()<index) {
 			System.out.print("입력하신 항목의 번호는 존재하지 않습니다.\n");
 			return;
 		}
@@ -126,7 +126,7 @@ public class TodoUtil {
 				System.out.print(str);
 			}
 		}
-		System.out.print("총 "+count+"개의 카테고리가 등록되어 있습니다.");
+		System.out.println("\n총 "+count+"개의 카테고리가 등록되어 있습니다.");
 		
 	}
 
@@ -164,7 +164,7 @@ public class TodoUtil {
 				String desc = st.nextToken();
 				String due_date = st.nextToken();
 				String current_date = st.nextToken();
-				TodoItem t = new TodoItem(category,title, desc,due_date,current_date);
+				TodoItem t = new TodoItem(title, desc,current_date,category,due_date);
 				l.addItem(t);
 			}
 			br.close();

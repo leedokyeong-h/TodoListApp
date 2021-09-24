@@ -14,10 +14,10 @@ public class Menu {
         System.out.println("제목 순으로 나열하기 ( ls_name_asc )");
         System.out.println("제목 역순으로 나열하기 ( ls_name_desc )");
         System.out.println("입력 순으로 나열하기 ( ls_date )");
-        System.out.println("입력 역순으로 나열하기 ( ls_date_desc ");
-        System.out.println("나가기 ( exit )\n");
+        System.out.println("입력 역순으로 나열하기 ( ls_date_desc )");
+        System.out.println("나가기 ( exit )");
     }
     public static void prompt() {
-        System.out.print("명령어를 입력해 주세요 > ");
+        System.out.print("\n명령어를 입력해 주세요 > ");
     }
 }
